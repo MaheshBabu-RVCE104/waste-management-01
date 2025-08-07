@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/demo-pages/(.*)",
+      "dest": "/demo-pages/$1"
+    },
+    {
+      "src": "/phpGmailSMTP/(.*)",
+      "dest": "/demo-pages/complaint-demo.html"
+    },
+    {
+      "src": "/admin_login.php",
+      "dest": "/demo-pages/admin-demo.html"
+    },
+    {
+      "src": "/admin_dashboard.php",
+      "dest": "/demo-pages/admin-dashboard-demo.html"
+    },
+    {
+      "src": "/login-user.php",
+      "dest": "/demo-pages/user-login-demo.html"
+    },
+    {
+      "src": "/signup-user.php",
+      "dest": "/demo-pages/user-signup-demo.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

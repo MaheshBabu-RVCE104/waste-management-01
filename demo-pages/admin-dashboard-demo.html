@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard Demo - Waste Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-badge {
+            background: #ff6b35;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #ff6b35;
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-icon {
+            font-size: 2.5rem;
+            color: #ff6b35;
+        }
+        .table-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .table th {
+            background: #f8f9fa;
+            border: none;
+            font-weight: 600;
+            color: #495057;
+        }
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-progress { background: #d1ecf1; color: #0c5460; }
+        .status-completed { background: #d4edda; color: #155724; }
+        .btn-action {
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+        .complaint-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .feature-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-alt"></i> Admin Dashboard
+            </a>
+            <span class="demo-badge">DEMO VERSION</span>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Feature Highlight -->
+        <div class="feature-highlight">
+            <h4><i class="fas fa-star"></i> Admin Dashboard Demo</h4>
+            <p class="mb-0">This showcases the admin functionality. In the full version, you would have complete control over all complaints with real-time data.</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="stats-card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3 class="text-primary">24</h3>
+                            <p class="text-muted mb-0">Total Complaints</p>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stats-card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3 class="text-warning">8</h3>
+                            <p class="text-muted mb-0">Pending</p>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stats-card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3 class="text-info">12</h3>
+                            <p class="text-muted mb-0">In Progress</p>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stats-card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3 class="text-success">4</h3>
+                            <p class="text-muted mb-0">Completed</p>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complaints Table -->
+        <div class="table-card">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="fas fa-table"></i> Recent Complaints</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Complaint Details</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="https://via.placeholder.com/60x60/ff6b35/ffffff?text=W" class="complaint-image" alt="Waste">
+                            </td>
+                            <td>
+                                <strong>Mixed Waste Accumulation</strong><br>
+                                <small class="text-muted">Large amount of mixed waste near main road</small>
+                            </td>
+                            <td>Pattangere</td>
+                            <td>2024-01-15</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary btn-action" onclick="showEditDemo()">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-action" onclick="showDeleteDemo()">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://via.placeholder.com/60x60/28a745/ffffff?text=O" class="complaint-image" alt="Organic">
+                            </td>
+                            <td>
+                                <strong>Organic Waste Dump</strong><br>
+                                <small class="text-muted">Organic waste causing foul smell</small>
+                            </td>
+                            <td>Kengeri Bus Stand</td>
+                            <td>2024-01-14</td>
+                            <td><span class="status-badge status-progress">In Progress</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary btn-action" onclick="showEditDemo()">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-action" onclick="showDeleteDemo()">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://via.placeholder.com/60x60/17a2b8/ffffff?text=P" class="complaint-image" alt="Plastic">
+                            </td>
+                            <td>
+                                <strong>Plastic Waste Collection</strong><br>
+                                <small class="text-muted">Plastic bottles and bags scattered</small>
+                            </td>
+                            <td>Jnanabharathi</td>
+                            <td>2024-01-13</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary btn-action" onclick="showEditDemo()">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-action" onclick="showDeleteDemo()">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Admin Controls Info -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h6><i class="fas fa-cogs"></i> Admin Controls</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-edit text-primary"></i> <strong>Edit:</strong> Modify complaint details and status</li>
+                            <li><i class="fas fa-trash text-danger"></i> <strong>Delete:</strong> Remove complaints with confirmation</li>
+                            <li><i class="fas fa-sync text-info"></i> <strong>Status:</strong> Change status (Pending/In Progress/Completed)</li>
+                            <li><i class="fas fa-envelope text-success"></i> <strong>Notifications:</strong> Email alerts to users</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h6><i class="fas fa-info-circle"></i> Demo Information</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-2"><strong>This is a static demo showing:</strong></p>
+                        <ul class="list-unstyled">
+                            <li>✅ Sample complaint data</li>
+                            <li>✅ Interactive buttons (non-functional)</li>
+                            <li>✅ Status management interface</li>
+                            <li>✅ Responsive design</li>
+                        </ul>
+                        <p class="mb-0"><strong>Full version includes:</strong> Real database integration, live updates, file management, and complete CRUD operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="text-center mt-4 mb-4">
+            <a href="../index.html" class="btn btn-outline-secondary">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="admin-demo.html" class="btn btn-outline-primary ml-2">
+                <i class="fas fa-sign-in-alt"></i> Admin Login Demo
+            </a>
+            <a href="complaint-demo.html" class="btn btn-outline-success ml-2">
+                <i class="fas fa-plus"></i> Submit Complaint Demo
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showEditDemo() {
+            alert('Edit Demo:\n\nIn the full version, this would open a modal with:\n• Editable complaint details\n• Status change dropdown\n• Image upload option\n• Save/Cancel buttons\n• Real-time database updates');
+        }
+
+        function showDeleteDemo() {
+            if (confirm('Delete Demo:\n\nIn the full version, this would:\n• Show confirmation dialog\n• Delete from database\n• Remove associated files\n• Send notification emails\n• Update statistics\n\nWould you like to see the confirmation dialog?')) {
+                alert('Complaint would be deleted successfully!\n\nIn the full version, this would:\n✅ Remove from database\n✅ Delete uploaded files\n✅ Send email notifications\n✅ Update admin statistics\n✅ Refresh the page');
+            }
+        }
+    </script>
+</body>
+</html>

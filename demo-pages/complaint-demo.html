@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Submission Demo - Waste Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        .demo-badge {
+            background: #ff6b35;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .form-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+        }
+        .btn-primary {
+            background: #ff6b35;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+        .feature-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .info-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .form-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .form-section h5 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="demo-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2><i class="fas fa-trash"></i> Complaint Submission Demo</h2>
+                    <p class="mb-0">Waste Management System - Static Demo</p>
+                </div>
+                <div class="col-md-4 text-right">
+                    <span class="demo-badge">DEMO VERSION</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Feature Highlight -->
+        <div class="feature-highlight">
+            <h4><i class="fas fa-star"></i> Complaint Submission Demo</h4>
+            <p class="mb-0">This showcases the complaint submission functionality. In the full version, this would save data to the database and send notifications.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="form-card">
+                    <div class="card-header bg-white">
+                        <h4><i class="fas fa-edit"></i> Submit Waste Complaint</h4>
+                        <p class="mb-0 text-muted">This is a demo of the complaint submission form</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="complaintForm">
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h5><i class="fas fa-user"></i> Personal Information</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><i class="fas fa-user"></i> Full Name *</label>
+                                            <input type="text" class="form-control" value="John Doe" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><i class="fas fa-phone"></i> Mobile Number *</label>
+                                            <input type="text" class="form-control" value="+1234567890" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-envelope"></i> Email Address *</label>
+                                    <input type="email" class="form-control" value="john@example.com" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Complaint Details -->
+                            <div class="form-section">
+                                <h5><i class="fas fa-exclamation-triangle"></i> Complaint Details</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><i class="fas fa-trash"></i> Waste Type *</label>
+                                            <select class="form-control" disabled>
+                                                <option selected>Mixed Waste</option>
+                                                <option>Organic Waste</option>
+                                                <option>Inorganic Waste</option>
+                                                <option>Plastic Waste</option>
+                                                <option>Electronic Waste</option>
+                                                <option>Medical Waste</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><i class="fas fa-map-marker-alt"></i> Location *</label>
+                                            <select class="form-control" disabled>
+                                                <option selected>Pattangere</option>
+                                                <option>Kengeri-Bus-stand</option>
+                                                <option>Jnanabharathi</option>
+                                                <option>RR Nagar</option>
+                                                <option>Vijayanagar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- File Upload -->
+                            <div class="form-section">
+                                <h5><i class="fas fa-camera"></i> Evidence & Documentation</h5>
+                                <div class="form-group">
+                                    <label><i class="fas fa-image"></i> Upload Image (Optional)</label>
+                                    <input type="file" class="form-control-file" disabled>
+                                    <small class="form-text text-muted">Upload a photo of the waste issue (JPG, PNG, max 5MB)</small>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="form-section">
+                                <h5><i class="fas fa-comment"></i> Detailed Description</h5>
+                                <div class="form-group">
+                                    <label><i class="fas fa-align-left"></i> Location Description *</label>
+                                    <textarea class="form-control" rows="4" readonly>Large amount of mixed waste has been accumulating near the main road intersection for the past 3 days. The waste includes plastic bottles, food wrappers, and other household items. This is causing a foul smell and attracting stray animals. Immediate attention is required to clean up this area and prevent further health hazards.</textarea>
+                                </div>
+                            </div>
+
+                            <!-- Demo Info -->
+                            <div class="info-card">
+                                <h6><i class="fas fa-info-circle"></i> Demo Information</h6>
+                                <p class="mb-2">This form shows sample data. In the full version, you would:</p>
+                                <ul class="mb-0">
+                                    <li>Fill in your actual personal information</li>
+                                    <li>Select the appropriate waste type and location</li>
+                                    <li>Upload real photos of the waste issue</li>
+                                    <li>Provide detailed description of the problem</li>
+                                    <li>Submit and receive a complaint ID</li>
+                                    <li>Get email notifications and status updates</li>
+                                </ul>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-lg" onclick="submitDemo()">
+                                    <i class="fas fa-paper-plane"></i> Submit Complaint (Demo)
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="text-center mt-4 mb-4">
+                    <a href="../index.html" class="btn btn-outline-secondary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="admin-demo.html" class="btn btn-outline-primary ml-2">
+                        <i class="fas fa-shield-alt"></i> Admin Login Demo
+                    </a>
+                    <a href="admin-dashboard-demo.html" class="btn btn-outline-success ml-2">
+                        <i class="fas fa-tachometer-alt"></i> Admin Dashboard Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitDemo() {
+            const features = [
+                "✅ Save complaint to database",
+                "✅ Generate unique complaint ID",
+                "✅ Send email notifications to admin",
+                "✅ Upload and store images",
+                "✅ Track complaint status",
+                "✅ Send status updates to user",
+                "✅ Admin dashboard integration",
+                "✅ Analytics and reporting"
+            ];
+            
+            const message = `Complaint Submission Demo!
+
+This is a demo version. In the full version, this would:
+
+${features.join('\n')}
+
+Demo Complaint Details:
+• Complaint ID: WMS-2024-001
+• Status: Pending
+• Submitted: ${new Date().toLocaleDateString()}
+• Location: Pattangere
+• Waste Type: Mixed Waste
+
+To experience the full functionality, please set up the PHP version locally with XAMPP/WAMP.`;
+            
+            alert(message);
+        }
+    </script>
+</body>
+</html>

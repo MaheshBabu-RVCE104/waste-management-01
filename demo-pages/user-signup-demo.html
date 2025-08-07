@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup Demo - Waste Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .signup-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            margin: 20px;
+        }
+        .demo-badge {
+            background: #ff6b35;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-section i {
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+        }
+        .btn-primary {
+            background: #ff6b35;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+        .alert {
+            border-radius: 10px;
+            border: none;
+        }
+        .feature-list {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .feature-list h6 {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+        .feature-list ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 5px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-card">
+        <div class="logo-section">
+            <i class="fas fa-user-plus"></i>
+            <h3>User Signup Demo</h3>
+            <span class="demo-badge">DEMO VERSION</span>
+            <p class="text-muted">Waste Management System</p>
+        </div>
+        
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i>
+            <strong>Demo Registration Form:</strong><br>
+            This shows the signup process with sample data
+        </div>
+        
+        <form id="demoForm">
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Full Name</label>
+                <input type="text" class="form-control" value="John Doe" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" class="form-control" value="john.doe@example.com" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <input type="password" class="form-control" value="securepassword123" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-lock"></i> Confirm Password</label>
+                <input type="password" class="form-control" value="securepassword123" readonly>
+            </div>
+            
+            <button type="button" class="btn btn-primary btn-block" onclick="showDemo()">
+                <i class="fas fa-user-plus"></i> Try Demo Signup
+            </button>
+        </form>
+        
+        <div class="feature-list">
+            <h6><i class="fas fa-star"></i> Full Version Features:</h6>
+            <ul>
+                <li>Email verification system</li>
+                <li>Password strength validation</li>
+                <li>Duplicate email checking</li>
+                <li>Account activation process</li>
+                <li>Welcome email notifications</li>
+                <li>Profile completion setup</li>
+            </ul>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="../index.html" class="btn btn-outline-secondary btn-sm">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="user-login-demo.html" class="btn btn-outline-primary btn-sm ml-2">
+                <i class="fas fa-sign-in-alt"></i> Login Demo
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showDemo() {
+            const features = [
+                "✅ Email validation and verification",
+                "✅ Password strength checking",
+                "✅ Duplicate email prevention",
+                "✅ Account activation via email",
+                "✅ Welcome email notifications",
+                "✅ Profile setup completion",
+                "✅ Database user creation",
+                "✅ Security measures and validation"
+            ];
+            
+            const message = `This is a demo version! 
+
+In the full version, this would create a new user account with:
+
+${features.join('\n')}
+
+Registration Process:
+1. Validate form data
+2. Check for existing email
+3. Hash password securely
+4. Create user in database
+5. Send verification email
+6. Activate account upon email verification
+
+To experience the full functionality, please set up the PHP version locally with XAMPP/WAMP.`;
+            
+            alert(message);
+        }
+    </script>
+</body>
+</html>

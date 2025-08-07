@@ -1,0 +1,23 @@
+{
+  "name": "waste-management-system",
+  "version": "1.0.0",
+  "description": "Waste Management System - Static Demo for Vercel",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "waste-management",
+    "environment",
+    "sustainability",
+    "static-site",
+    "demo"
+  ],
+  "author": "WMS Team",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  }
+}
